@@ -33,6 +33,20 @@
 | **Real-Time** | Socket.io (if used)          |
 | **Deployment**| Vercel / Netlify / Render    |
 
+
+ **Project Setup & Installation**
+ 
+Step 1: Clone the Repository
+   git clone https://github.com/your-username/auction-hub.git
+   cd auction-hub
+
+Step 2: Install Dependencies (if applicable)
+   npm install
+
+Step 3: Run the Project
+   open index.html
+
 ---
 This project is fully developed and maintained by Parul Buwade.
+
 
