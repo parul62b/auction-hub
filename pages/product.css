@@ -1,0 +1,211 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #3f3f3f;
+  color: white;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar a {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.theme-toggle button {
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Main Product Page */
+.product-details {
+  display: flex;
+  margin: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-gallery {
+  width: 50%;
+  padding: 1rem;
+}
+
+.product-gallery img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.product-info {
+  padding: 1rem;
+  width: 50%;
+}
+
+.product-info h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.product-info .price {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.product-info input[type="number"] {
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.product-info button {
+  background-color: #2a5298;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  width: 100%;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.product-info button:hover {
+  background-color: #2a5298;
+}
+
+.product-description {
+  margin: 2rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-reviews {
+  margin: 2rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-reviews textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #181818;
+  color: white;
+}
+
+body.dark-mode .header {
+  background-color: #333;
+}
+
+body.dark-mode .navbar a {
+  color: white;
+}
+
+body.dark-mode .product-details {
+  background-color: #242424;
+  color: white;
+}
+
+body.dark-mode .product-info button {
+  background-color: #007bff;
+}
+
+body.dark-mode .product-info button:hover {
+  background-color: #0056b3;
+}
+
+/* Submit Button Styling */
+.btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: #1e3c72; /* Blue color for the button */
+  color: white;
+  border: 2px solid #1e3c72; /* Border color matches button color */
+  border-radius: 5px; /* Slight rounding of corners */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, border 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* Ensures button doesn't stretch to full width */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+  border-color: #0056b3; /* Match border color with background on hover */
+  transform: scale(1.05); /* Slightly enlarges the button */
+}
+
+.btn:active {
+  background-color: #003f7f; /* Even darker shade when clicked */
+  border-color: #003f7f; /* Border color changes accordingly */
+  transform: scale(0.98); /* Slightly shrinks the button */
+}
+
+.btn:focus {
+  outline: none; /* Removes the outline on focus for a cleaner look */
+}

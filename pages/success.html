@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Successful | AuctionHub</title>
+    <link rel="stylesheet" href="success.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">AuctionHub</div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="product.html">Shop More</a></li>
+          <li><a href="../login.html">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="success-container">
+      <div class="success-card">
+        <img
+          src="images/success.svg"
+          alt="Payment Success"
+          class="success-image"
+        />
+        <h1>Thank You!</h1>
+        <p>
+          Your payment was successful. We've received your order, and it's now
+          being processed.
+        </p>
+        <div class="order-details">
+          <h2>Order Details</h2>
+          <p><strong>Order ID:</strong> #123456789</p>
+          <p><strong>Amount Paid:</strong> $150.00</p>
+          <p>
+            <strong>Payment ID:</strong> <span id="paymentId">Loading...</span>
+          </p>
+        </div>
+        <a href="../index.html">
+          <button class="btn" onclick="redirectToHome()">Go to Home</button></a
+        >
+        <a href="cart.html">
+          <button class="btn-outline" onclick="redirectToOrders()">
+            View My Orders
+          </button></a
+        >
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 AuctionHub. All rights reserved.</p>
+    </footer>
+
+    <script src="success.js" defer></script>
+  </body>
+</html>

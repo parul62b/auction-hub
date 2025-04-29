@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .payment-details {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+      }
+
+      .payment-details h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .billing-period {
+        margin-bottom: 20px;
+      }
+
+      .billing-period label {
+        margin-right: 10px;
+        font-size: 14px;
+      }
+
+      .billing-period input {
+        margin-right: 5px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: #2d3b40;
+      }
+
+      .pay-button {
+        display: block;
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .pay-button:hover {
+        background-color: #333;
+    
+      }
+
+      .alt-payments {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .alt-payments button {
+        background: none;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      .alt-payments button:hover {
+        background-color: #f4f4f4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="payment-details">
+      <h2>Payment Details</h2>
+
+      <div class="billing-period">
+        <label
+          ><input type="radio" name="billing" value="annually" checked />
+          Annually $15/month</label
+        >
+        <label
+          ><input type="radio" name="billing" value="monthly" /> Monthly
+          $18/month</label
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="united-states">United States</option>
+          <option value="canada">Canada</option>
+          <option value="uk">United Kingdom</option>
+          <option value="india">India</option>
+          <option value="australia">Australia</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="zip">Zip Code</label>
+        <input type="text" id="zip" name="zip" placeholder="00000" />
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name on Card</label>
+        <input type="text" id="name" name="name" placeholder="Required" />
+      </div>
+
+      <div class="form-group">
+        <label for="card">Credit Card Number</label>
+        <input
+          type="text"
+          id="card"
+          name="card"
+          placeholder="0000 - 0000 - 0000 - 0000"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="expiry">Expire Date</label>
+        <input type="text" id="expiry" name="expiry" placeholder="MM / YY" />
+      </div>
+
+      <div class="form-group">
+        <label for="cvv">CVC / CVV</label>
+        <input type="text" id="cvv" name="cvv" placeholder="CVC" />
+      </div>
+      <a href="success.html">
+        <button class="pay-button">Pay and Upgrade</button></a
+      >
+
+      <div class="alt-payments">
+        <p>or pay fast with</p>
+        <button>PayPal</button>
+        <button>Apple Pay</button>
+      </div>
+    </div>
+  </body>
+</html>

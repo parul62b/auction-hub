@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  padding: 20px;
+}
+
+header .logo {
+  color: white;
+  font-size: 24px;
+  float: left;
+}
+
+header .navbar {
+  float: right;
+}
+
+header .navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header .navbar ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+header .navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Register Section */
+.register-section {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+}
+
+.register-section .container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.register-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.register-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.register-form .form-group label {
+  font-weight: bold;
+  color: #555;
+}
+
+.register-form .form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.register-form .form-group input[type="checkbox"] {
+  width: auto;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1e3c72;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.register-form button:hover {
+  background-color: #1e3c72;
+}
+
+.register-section p {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.register-section p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-section p a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .register-section .container {
+    padding: 20px;
+  }
+
+  .register-form .form-group input {
+    padding: 8px;
+  }
+
+  .register-form button {
+    padding: 10px;
+  }
+}

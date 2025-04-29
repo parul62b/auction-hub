@@ -1,0 +1,738 @@
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #333;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  float: left;
+}
+
+header .navbar {
+  float: right;
+}
+
+header .navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header .navbar ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+header .navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+header .navbar ul li a:hover {
+  color: #ffd700;
+  background-color: #555;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  background-color: #ffd700;
+  color: #333;
+  padding: 12px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #f39c12;
+  transform: scale(1.05);
+}
+
+/* Auction Grid */
+.auction-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.auction-item {
+  width: 30%;
+  margin: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.auction-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auction-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.auction-item .title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.auction-item .price {
+  font-size: 16px;
+  color: #007bff;
+}
+
+.auction-item .auction-action {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.auction-item:hover .auction-action {
+  opacity: 1;
+}
+
+/* Cart Page */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  position: relative;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+/* Register Section */
+.register-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  margin: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.register-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-form .form-group {
+  margin-bottom: 20px;
+}
+
+.register-form .form-group label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+}
+
+.register-form .form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.register-form .form-group input[type="checkbox"] {
+  width: auto;
+}
+
+.register-form .form-group input:focus {
+  border-color: #007bff;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.register-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+.register-section p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-section p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-section p a:hover {
+  text-decoration: underline;
+}
+
+/* Social Media Icons */
+.footer .social-icons {
+  margin-top: 20px;
+}
+
+.footer .social-icons a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .auction-item {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .auction-item {
+    width: 100%;
+  }
+
+  header .logo {
+    font-size: 20px;
+  }
+
+  header .navbar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 40px 10px;
+  }
+
+  .register-section {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+/* Product Page */
+.product-page {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+}
+
+.product-detail {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.product-detail img {
+  max-width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  max-width: 40%;
+}
+
+.product-info h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.product-info p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.product-info .price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+.product-info .auction-time {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #e74c3c;
+}
+
+.product-info .action-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.product-info .btn {
+  background-color: #ffd700;
+  color: #333;
+  padding: 12px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-info .btn:hover {
+  background-color: #f39c12;
+  transform: scale(1.05);
+}
+
+/* Product Gallery */
+.product-gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product-gallery img {
+  width: 30%;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.product-gallery .thumbs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* About Page */
+.about-page {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.about-header p {
+  font-size: 18px;
+  color: #777;
+  margin-top: 10px;
+}
+
+.team-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  width: 30%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.team-member p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.team-member .social-icons {
+  margin-top: 15px;
+}
+
+.team-member .social-icons a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: #007bff;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.team-member .social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Register Page */
+.register-page {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-header h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.register-section {
+  padding: 40px;
+  background-color: #fff;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.register-section h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-form .form-group {
+  margin-bottom: 20px;
+}
+
+.register-form .form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.register-form .form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.register-form button:hover {
+  background-color: #0056b3;
+}
+
+.register-form .form-group input:focus {
+  border-color: #007bff;
+}
+
+.register-section p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-section p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-section p a:hover {
+  text-decoration: underline;
+}
+
+/* Categories Section */
+.categories {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.categories h3 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  width: 30%;
+  text-align: center;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.category-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.category-item:hover img {
+  transform: scale(1.1);
+}
+
+.category-item h4 {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  padding: 15px 0;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+
+.category-item:hover h4 {
+  color: #ff6600;
+}
+
+/* Responsive Styles for Category Section */
+@media (max-width: 768px) {
+  .category-item {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-item {
+    width: 100%;
+  }
+}
+
+/* Search Bar Styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.search-bar:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Search Input */
+.search-bar input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  outline: none;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #1e3c72;
+  background-color: #fff;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Search Button */
+.search-bar .btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #1e3c72;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+  flex-shrink: 0; /* Prevent the button from shrinking */
+}
+
+.search-bar .btn:hover {
+  background-color: #100547;
+  transform: scale(1.05);
+}
+
+.search-bar .btn:active {
+  background-color: #11065c;
+  transform: scale(0.98);
+}
+
+.search-bar .btn:focus {
+  outline: none;
+}
+
+/* Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.search-bar input:focus {
+  animation: pulse 0.5s ease-out;
+}
+
+.auction-item .btn {
+  background-color: #ffd700;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart | AuctionHub</title>
+    <link
+      rel="stylesheet"
+      href="/Users/parulbuwade/auction hub/pages/cart.css"
+    />
+  </head>
+  <body>
+    <header class="header sticky-header">
+      <div class="logo">AuctionHub</div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="../home.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li>
+            <a href="product.html">Product</a>
+          </li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+      <div class="theme-toggle">
+        <button id="themeToggle">Switch to Dark Mode</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="cart">
+        <h2>Your Cart</h2>
+
+        <div id="cartItems" class="cart-items">
+          <!-- Cart items will be dynamically loaded here -->
+        </div>
+
+        <div class="cart-total">
+          <p>Total: $<span id="totalAmount">0.00</span></p>
+        </div>
+        <a href="checkout.html">
+          <button id="checkoutBtn" class="btn">Proceed to Checkout</button></a
+        >
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 AuctionHub. All rights reserved.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Render the cart items when the page is loaded
+        renderCartItems();
+
+        // Event listener for the "Empty Cart" button
+        const emptyCartButton = document.getElementById("emptyCartBtn");
+        if (emptyCartButton) {
+          emptyCartButton.addEventListener("click", emptyCart);
+        }
+      });
+
+      // Function to render cart items dynamically
+      function renderCartItems() {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const cartContainer = document.getElementById("cartItems");
+        cartContainer.innerHTML = ""; // Clear existing items
+
+        let totalAmount = 0;
+
+        if (cartItems.length === 0) {
+          cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+          document.getElementById("totalAmount").textContent = "0.00";
+          return;
+        }
+
+        cartItems.forEach((item) => {
+          const cartItemDiv = document.createElement("div");
+          cartItemDiv.classList.add("cart-item");
+          cartItemDiv.dataset.id = item.id;
+
+          // Create the product HTML with editable quantity
+          cartItemDiv.innerHTML = `
+      <img src="${item.image}" alt="Product Image">
+      <div class="cart-item-details">
+        <p>${item.name}</p>
+        <p>Price: $${item.price}</p>
+        <p>Quantity: <input type="number" class="item-quantity" value="${item.quantity}" data-id="${item.id}" min="1"></p>
+      </div>
+      <button class="remove-btn" data-id="${item.id}">Remove</button>
+    `;
+
+          // Append the item to the cart
+          cartContainer.appendChild(cartItemDiv);
+
+          // Add total price calculation
+          totalAmount += item.price * item.quantity;
+
+          // Attach event listener for the quantity change
+          const quantityInput = cartItemDiv.querySelector(".item-quantity");
+          quantityInput.addEventListener("input", (e) =>
+            updateQuantity(e, item.id)
+          );
+        });
+
+        // Update total amount on the page
+        document.getElementById("totalAmount").textContent =
+          totalAmount.toFixed(2);
+
+        // Add event listener for remove button
+        const removeButtons = document.querySelectorAll(".remove-btn");
+        removeButtons.forEach((button) => {
+          button.addEventListener("click", removeItemFromCart);
+        });
+      }
+
+      // Function to remove an item from the cart
+      function removeItemFromCart(event) {
+        const itemId = event.target.dataset.id; // Get the id from the button's data-id
+        console.log("Removing item with ID:", itemId); // Debugging log
+
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        // Filter out the item with the given id
+        cartItems = cartItems.filter((item) => item.id !== itemId);
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+        // Re-render the cart
+        renderCartItems();
+      }
+
+      // Function to update the quantity of an item
+      function updateQuantity(event, itemId) {
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        // Find the item that matches the id
+        const item = cartItems.find((item) => item.id === itemId);
+
+        if (item) {
+          const newQuantity = event.target.value;
+          item.quantity = Math.max(1, newQuantity); // Ensure the quantity is at least 1
+          localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+          // Re-render the cart with updated quantities
+          renderCartItems();
+        }
+      }
+
+      // Function to clear the cart
+      function emptyCart() {
+        localStorage.removeItem("cartItems"); // Remove all items from localStorage
+        renderCartItems(); // Re-render the cart as empty
+
+        // Function to remove an item by ID
+        function removeItemFromCart(itemId) {
+          // Retrieve the cart items from localStorage
+          let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+          // Filter out the item with the given id
+          cartItems = cartItems.filter((item) => item.id !== itemId);
+
+          // Save the updated cart back to localStorage
+          localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+          // Re-render the cart or update the UI
+          renderCartItems();
+        }
+
+        // Example usage: Remove item with id '123'
+        removeItemFromCart("1");
+      }
+    </script>
+  </body>
+</html>

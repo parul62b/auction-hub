@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | AuctionHub</title>
+    <link rel="stylesheet" href="checkout.css" />
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- Razorpay SDK -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">AuctionHub</div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="../home.html">Home</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="checkout-container">
+      <div class="shipping-details">
+        <h2>Shipping Details</h2>
+        <form id="shippingForm">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your full name"
+            required
+          />
+
+          <label for="address">Address</label>
+          <textarea
+            id="address"
+            placeholder="Enter your address"
+            required
+          ></textarea>
+
+          <label for="city">City</label>
+          <input type="text" id="city" placeholder="Enter your city" required />
+
+          <label for="zip">Zip Code</label>
+          <input
+            type="text"
+            id="zip"
+            placeholder="Enter your zip code"
+            required
+          />
+        </form>
+      </div>
+
+      <div class="order-summary">
+        <h2>Order Summary</h2>
+        <div id="orderItems">
+          <div class="item">
+            <span>Vintage Watch</span>
+            <span>$150</span>
+          </div>
+        </div>
+        <div class="total">
+          <strong>Total: </strong> $<span id="totalAmount">150.00</span>
+        </div>
+
+        <h3>Payment Options</h3>
+        <div class="payment-methods">
+          <label>
+            <input
+              type="radio"
+              name="paymentMethod"
+              value="creditCard"
+              checked
+            />
+            💳 Credit Card
+          </label>
+          <label>
+            <input type="radio" name="paymentMethod" value="upi" />
+            🔴 UPI
+          </label>
+          <label>
+            <input type="radio" name="paymentMethod" value="paypal" />
+            💸 PayPal
+          </label>
+        </div>
+        <a href="payment.html">
+          <button id="proceedToPay" class="btn">Proceed to Payment</button>
+        </a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 AuctionHub. All rights reserved.</p>
+    </footer>
+
+    <script src="checkout.js" defer></script>
+  </body>
+</html>
