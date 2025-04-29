@@ -3,13 +3,6 @@
 **Auction Hub** is a modern and interactive online auction platform where users can register, list products, and participate in real-time bidding. It provides a seamless auction experience with a clean interface and smooth bidding functionality.
 
 ---
----
-
-## 📸 Preview
-
-![Auction Hub Screenshot](https://your-screenshot-link-here.com)
-
----
 
 ## 🎯 Key Features
 
